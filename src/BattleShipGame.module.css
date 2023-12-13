@@ -1,0 +1,19 @@
+.cell {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.change {
+  background-color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
