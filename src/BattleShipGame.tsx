@@ -644,8 +644,8 @@ function BattleShipGame() {
   }, [play]);
 
   useEffect(() => {
-    if (stop || fireResponse?.mapId === 0) {
-      if (fireResponse?.mapId === 0) {
+    if (stop || fireResponse?.finished) {
+      if (fireResponse?.finished) {
         console.log(`Game ended with total moves: ${moveCountTotal.current}`);
         moveCountTotal.current = 0;
       }
@@ -659,7 +659,7 @@ function BattleShipGame() {
     if (fireResponse?.grid! === emptyGrid) {
       moveCountTotal.current += fireResponse?.moveCount!;
       console.log(
-        `!!! Resetujem !!!\nMap ID: ${fireResponse?.mapId}, move count: ${fireResponse?.moveCount}`
+        `Map ID: ${fireResponse?.mapId}, move count: ${fireResponse?.moveCount}`
       );
       sunkShips.current = [];
       huntingMode.current = undefined;
